@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<script src="jquery-latest.js"></script>
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans+SC|Cedarville+Cursive|Tangerine|Amatic+SC|Fredericka+the+Great" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>SheepishLambArt Links</title>
+  </head>
+  
+  <div style="position: relative; top: 60px; left: 375px; text-align: center; font-family: Cedarville Cursive; font-size: 24pt; color: #738496; z-index: 1;">Art</div>
+  <div id="logo" style="cursor: pointer; top: 0px; padding: 20px 0px; position: relative; width: 100%; text-align: center; font-size: 48pt; line-height: 48pt; font-family: Alegreya; color: #0a2f4e; background: #585858e3;">SheepishLamb</div>
+  
+  
+  <div class="tab-links" style="position: relative; top: 0px; text-align: center; background: #32313de3;">
+    <button class="menu"><a href="https://www.facebook.com/sheepishlambart"><img src="f.png"></a></button>
+    <button class="menu"><a href="https://sheepishlambart.tumblr.com/"><img src="t.png"></a></button>
+    <button class="menu"><a href="https://www.instagram.com/sheepishlambart/"><img src="i.png"></a></button>
+	<br/>
+	<button class="menu"><a href="https://www.teepublic.com/t-shirt/2706741-choose-your-weapon">Choose Your Weapon T-Shirt</a></button>
+    <button class="menu"><a href="#About">About</a></button>
+  </div>
+  
+  <div id="logoimg" style="text-align: center;">
+  <img src="logo.jpg" style="width: 500px; background: #ffffffa6; border-radius: 50px;">
+  <table style="width: 100%; background: #32313de3; text-align: center; color: #738496; font-family: georgia; font-size: 18pt; padding: 0px 150px;">
+  <tr>
+  <td>
+  <br/>something here</td>
+  </tr>
+  </table>
+  </div>
+  
+  <div class="tabs">
+  
+  <!--About-->
+  <div class="tab" id="About" style="position: relative; text-align: center; display: none;">
+  </div>
+  <!--About-end-->
+  
+
+  <div id="db"></div>
+
+<script>
+  jQuery(document).ready(function() {
+  jQuery('.tab-links .menu a').on('click', function(e) {
+    var currentAttrValue = jQuery(this).attr('href');
+    // Show/Hide Tabs
+    jQuery('.tab' + currentAttrValue).show().siblings().hide();
+	$("#logoimg").hide();
+    // Change/remove current tab to active
+    jQuery(this).parent('button').addClass('active').siblings().removeClass('active');
+    e.preventDefault();
+  });
+  });
+  
+   $(function() {
+	$("#About").load("About.php");
+	$("#db").load("db.php");
+	
+      $('.majorpoints').click(function() {
+        $(this).find('.hiders').toggle();
+      });
+
+	  $("#logo").on('click', function() {
+	  $('.tab').hide();
+	  $("#logoimg").show();
+	  });
+      
+      // End
+    });
+
+</script>
+</body>
+
+<style>
+  body {
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/wheat.png");
+    cursor: url('cursor.png'), progress;
+  }
+
+  .menu { 
+    background: transparent;
+    border: none;
+    font-family: amatic sc;
+    font-size: 28pt;
+    font-weight: bold;
+    padding: 0px 15px;
+    color: #738496;
+  }
+  .menu a {
+    color: #738496;
+  }
+  .menu.active a {
+    color: #ffffff;
+  }
+  .menu:hover a {
+    color: #efb839;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+  
+ ::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #00000085;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #738496;
+}
+
+  /* Tooltip text */
+
+  .tooltip .text {
+    visibility: hidden;
+    background-color: rgba(0, 100, 125, .8);
+    color: #cff9f8;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    z-index: 4;
+    position: absolute;
+  }
+
+  .tooltip:hover .text {
+    visibility: visible;
+  }
+
+</style>
+</html>
